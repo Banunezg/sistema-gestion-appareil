@@ -1,0 +1,72 @@
+/* ============================================
+   APPAREIL — Sistema de diseño compartido
+   Usado por index.html (login) y dashboard.html
+   ============================================ */
+
+:root {
+  /* Marca */
+  --primary: #6b7a55;
+  --primary-dark: #454e37;
+  --primary-light: #eef1e9;
+
+  /* Superficie */
+  --bg: #f4f5f2;
+  --surface: #ffffff;
+  --border: #e4e6e1;
+
+  /* Texto */
+  --text: #1a1f1c;
+  --text-muted: #6b7570;
+  --text-faint: #9a9e97;
+
+  /* Estados de oferta */
+  --accepted: #0f8a5f;
+  --accepted-bg: #e9f7f0;
+  --process: #2563eb;
+  --process-bg: #eaf1fc;
+  --lost: #c23b4f;
+  --lost-bg: #fbebee;
+
+  /* Urgencia (días restantes) */
+  --urgent: #c23b4f;
+  --urgent-bg: #fbebee;
+  --soon: #b3760b;
+  --soon-bg: #fdf3de;
+  --calm: #57606a;
+  --calm-bg: #eef0f2;
+
+  /* Feedback */
+  --danger: #c23b4f;
+  --danger-hover: #a12f41;
+
+  /* Escala de espaciado */
+  --sp-1: 6px;
+  --sp-2: 10px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
+
+  /* Forma */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+button { cursor: pointer; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #d4d7d0; border-radius: 20px; }
+::-webkit-scrollbar-track { background: transparent; }

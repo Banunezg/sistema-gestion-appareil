@@ -1,0 +1,218 @@
+/* Pantalla de login */
+
+html {
+  height: 100%;
+}
+
+body.login-body {
+  margin: 0 !important; 
+  box-sizing: border-box;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: var(--sp-4);
+  background: linear-gradient(180deg, #f4f5f2 0%, #eceee8 100%);
+}
+
+.login-wrapper {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.login-logo img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.login-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 10px 30px rgba(26, 31, 28, 0.06);
+}
+
+.login-card h1 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+.login-card .subtitle {
+  margin: 0 0 28px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.field { margin-bottom: var(--sp-3); }
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.login-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: var(--sp-4);
+}
+.login-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.login-row a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-row a:hover { text-decoration: underline; }
+
+.btn-login {
+  width: 100%;
+  padding: 13px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-login:hover { background: var(--primary-dark); }
+.btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.login-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-top: var(--sp-4);
+}
+
+@media (max-width: 480px) {
+  .login-card { padding: 28px 20px; }
+}
+
+/* ========================================================================= */
+/* AJUSTES PARA TELÉFONOS MÓVILES (RESPONSIVE DESIGN)                        */
+/* ========================================================================= */
+@media (max-width: 768px) {
+    /* 1. Apilar las tarjetas de resumen y gráficos una sobre otra */
+    .dashboard-stats, 
+    #chartsModal .card-modal > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* 2. Hacer que la tabla se pueda deslizar hacia los lados sin romper la página */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    /* 3. Achicar un poco los modales para que no tapen toda la pantalla */
+    .card-modal {
+        width: 95% !important;
+        padding: 15px !important;
+        margin: 10px;
+    }
+
+    /* 4. Ajustar el tamaño del texto de los títulos en móviles */
+    h2 {
+        font-size: 18px !important;
+    }
+
+    /* 5. Forzar que la página entera permita hacer scroll hacia abajo */
+    html, body {
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+
+    /* 6. Liberar el contenedor principal (quitar el bloqueo de altura) */
+    .main-content, 
+    .dashboard-container, 
+    .container {
+        height: auto !important;
+        overflow-y: visible !important;
+        max-height: none !important;
+    }
+
+    /* 7. Reordenar el Header (Menú superior) */
+    header, .top-bar {
+        position: relative; 
+        padding-top: 50px; 
+    }
+    
+    .profile-icon, .user-menu { 
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .header-actions, .actions-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-primary {
+        order: -1; /* Forzamos el botón verde arriba */
+        width: 100%;
+    }
+
+    /* 8. Domar el Calendario para que no rompa la pantalla */
+    .fc-header-toolbar.fc-toolbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .fc {
+        font-size: 12px;
+    }
+
+    .fc-view-harness {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+}
